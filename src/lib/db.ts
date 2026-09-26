@@ -63,15 +63,19 @@ export async function seedIfEmpty() {
   const { seedProducts, seedMovements, seedClients, seedSuppliers, seedEscrow, seedActivity, seedSuggestions } =
     await import("./mock-data");
 
+  // Correction ici : Les tables sont regroupées dans un tableau [db.products, db.movements, ...] 
+  // pour éviter l'erreur de nombre d'arguments TypeScript.
   await db.transaction(
     "rw",
-    db.products,
-    db.movements,
-    db.clients,
-    db.suppliers,
-    db.escrow,
-    db.activity,
-    db.suggestions,
+    [
+      db.products,
+      db.movements,
+      db.clients,
+      db.suppliers,
+      db.escrow,
+      db.activity,
+      db.suggestions
+    ],
     async () => {
       await db.products.bulkAdd(seedProducts);
       await db.movements.bulkAdd(seedMovements);
