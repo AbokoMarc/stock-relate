@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #0e1210;
+  color: #f4f1e8;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #c67c2e;
+  color: #0e1210;
+}
+
+/* Barre de scroll fine pour les tableaux qui débordent horizontalement */
+.thin-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: #3a483f;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
