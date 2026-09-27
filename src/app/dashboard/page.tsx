@@ -7,6 +7,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import StatCard from "@/components/ui/StatCard";
 import SwarmInbox from "@/components/dashboard/SwarmInbox";
 import ActivityFeed from "@/components/dashboard/ActivityFeed";
+import MiniMovementsChart from "@/components/dashboard/MiniMovementsChart";
 
 export default function DashboardPage() {
   const { products } = useProducts();
@@ -44,6 +45,10 @@ export default function DashboardPage() {
           tone={lowStockCount > 0 ? "warn" : "default"}
           hint="Réassort recommandé"
         />
+      </div>
+
+      <div className="mb-4">
+        <MiniMovementsChart />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4">

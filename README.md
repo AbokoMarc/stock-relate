@@ -85,10 +85,26 @@ cache, et créer un produit le met en file au lieu d'échouer.
 4. Déployez ce frontend sur Cloudflare Pages (ou Vercel/Netlify), avec les 3 variables
    d'environnement `NEXT_PUBLIC_*` ci-dessus renseignées dans les paramètres du projet.
 
+## Thème visuel et pages, alignés sur votre maquette Uizard
+
+Le thème est passé au clair (fond blanc, sidebar orange pleine) pour coller à vos captures
+d'origine — voir `tailwind.config.ts`. Deux pages ont été ajoutées pour couvrir des sections
+que la maquette avait et que le premier jet n'avait pas :
+- **Entrepôts** (`/warehouses`) : cartes par site (Yaoundé/Douala) avec valeur de stock,
+  unités, produits critiques — équivalent de la grille "Warehouses" de la maquette, mais sur
+  vos deux vrais sites plutôt que des noms d'exemple (Manchester, Chicago…).
+- **Statistiques** (`/statistics`) : graphiques réels (recharts) — mouvements des 14 derniers
+  jours, valeur du stock par catégorie — calculés depuis vos données Supabase, pas des
+  chiffres d'exemple.
+
+Le Dashboard a aussi un mini-graphique d'activité sur 7 jours, comme le "Sales" de la
+maquette.
+
 ## Structure du projet
 
-- `src/app/*/page.tsx` — les 9 pages (Dashboard, Inventaire, Mouvements, Fournisseurs,
-  Clients, Fintech, Brouillons WhatsApp, Réglages, Onboarding) — toutes branchées.
+- `src/app/*/page.tsx` — les 11 pages (Dashboard, Inventaire, Mouvements, Entrepôts,
+  Statistiques, Fournisseurs, Clients, Fintech, Brouillons WhatsApp, Réglages, Onboarding) —
+  toutes branchées.
 - `src/lib/worker.ts` — client pour appeler le Worker Cloudflare (transcription, vision, TTS),
   authentifié avec le token de session Supabase.
 - `src/lib/supabase.ts` — client Supabase (clé publique `anon`, protégée par RLS).
