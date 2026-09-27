@@ -26,7 +26,7 @@ export default function EscrowPage() {
         subtitle="Suivi des push MoMo — MTN & Orange Money."
       />
 
-      <div className="mb-5 flex gap-2.5 rounded-lg border border-clay-500/30 bg-clay-500/10 p-3 text-xs text-clay-400">
+      <div className="mb-5 flex gap-2.5 rounded-lg border border-clay-500/30 bg-clay-500/10 p-3 text-xs text-clay-700">
         <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
         <p>
           Cet écran affiche un flux de <strong>paiement direct au compte marchand</strong>, pas un vrai

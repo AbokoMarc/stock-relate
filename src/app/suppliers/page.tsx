@@ -36,7 +36,7 @@ export default function SuppliersPage() {
                   </td>
                   <td className="px-4 py-3 text-paper/70">{s.city}</td>
                   <td className="px-4 py-3 text-right tabular-nums">{s.avgLeadTimeDays} j</td>
-                  <td className="px-4 py-3 text-right tabular-nums text-clay-400">{fcfa(s.amountOwed)}</td>
+                  <td className="px-4 py-3 text-right tabular-nums text-clay-700">{fcfa(s.amountOwed)}</td>
                   <td className="px-4 py-3 text-right">
                     <button
                       className="inline-flex items-center gap-1.5 rounded-md border border-base-600 px-2.5 py-1.5 text-xs text-paper/70 hover:bg-base-800"

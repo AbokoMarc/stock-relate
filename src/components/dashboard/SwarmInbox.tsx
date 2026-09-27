@@ -19,7 +19,7 @@ export default function SwarmInbox() {
   return (
     <Card>
       <div className="mb-3 flex items-center gap-2">
-        <Sparkles className="h-4 w-4 text-clay-400" />
+        <Sparkles className="h-4 w-4 text-clay-700" />
         <h2 className="font-display text-sm text-paper">Boîte de réception — agents</h2>
         {suggestions && suggestions.length > 0 && <Badge tone="clay">{suggestions.length} actives</Badge>}
       </div>

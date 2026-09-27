@@ -24,7 +24,7 @@ export default function SettingsPage() {
         <Card>
           <h2 className="font-display text-sm mb-3">État de la synchronisation</h2>
           <p className="text-sm text-paper/70">
-            Réseau : <span className={online ? "text-forest-400" : "text-alert-500"}>{online ? "connecté" : "hors-ligne"}</span>
+            Réseau : <span className={online ? "text-forest-600" : "text-alert-500"}>{online ? "connecté" : "hors-ligne"}</span>
           </p>
           <p className="mt-2 text-xs text-paper/40">
             Inventaire et mouvements sont branchés sur Supabase (source de vérité partagée). Le
@@ -67,7 +67,7 @@ export default function SettingsPage() {
                 {INTEGRATIONS.map((i) => (
                   <tr key={i.name} className="border-b border-base-800 last:border-0">
                     <td className="py-2.5 pr-4 text-paper">{i.name}</td>
-                    <td className="py-2.5 pr-4 font-mono text-xs text-clay-400">{i.envVar}</td>
+                    <td className="py-2.5 pr-4 font-mono text-xs text-clay-700">{i.envVar}</td>
                     <td className="py-2.5 text-xs text-paper/50">{i.where}</td>
                   </tr>
                 ))}

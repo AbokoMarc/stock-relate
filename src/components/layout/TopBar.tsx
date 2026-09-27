@@ -48,7 +48,7 @@ export default function TopBar() {
       <div className="ml-auto flex items-center gap-3">
         <span
           className={`hidden sm:flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs ${
-            online ? "bg-forest-600/20 text-forest-400" : "bg-alert-500/20 text-alert-500"
+            online ? "bg-forest-600/20 text-forest-600" : "bg-alert-500/20 text-alert-500"
           }`}
           title={online ? "Connecté — synchro active" : "Hors-ligne — les ventes continuent en local"}
         >
@@ -57,7 +57,7 @@ export default function TopBar() {
         </span>
         {pendingCount > 0 && (
           <span
-            className="hidden sm:flex items-center gap-1.5 rounded-full bg-clay-500/20 px-2.5 py-1 text-xs text-clay-400"
+            className="hidden sm:flex items-center gap-1.5 rounded-full bg-clay-500/20 px-2.5 py-1 text-xs text-clay-700"
             title={`${pendingCount} produit(s) créé(s) hors-ligne, en attente de synchronisation`}
           >
             <UploadCloud className="h-3.5 w-3.5" /> {pendingCount} en attente

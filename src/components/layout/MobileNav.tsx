@@ -22,7 +22,7 @@ export default function MobileNav() {
               <Link
                 href={item.href}
                 className={`flex flex-col items-center gap-1 py-2.5 text-[11px] ${
-                  active ? "text-clay-400" : "text-paper/50"
+                  active ? "text-clay-700" : "text-paper/50"
                 }`}
               >
                 <Icon className="h-5 w-5" strokeWidth={active ? 2.4 : 2} />

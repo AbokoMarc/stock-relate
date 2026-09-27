@@ -68,7 +68,7 @@ export default function MovementsPage() {
                   key={t}
                   onClick={() => setForm((f) => ({ ...f, type: t }))}
                   className={`flex flex-col items-center gap-1 rounded-md border px-2 py-2 text-[11px] ${
-                    form.type === t ? "border-clay-500 text-clay-400 bg-clay-500/10" : "border-base-700 text-paper/50"
+                    form.type === t ? "border-clay-500 text-clay-700 bg-clay-500/10" : "border-base-700 text-paper/50"
                   }`}
                 >
                   {t === "in" && <ArrowDownToLine className="h-4 w-4" />}
@@ -183,15 +183,15 @@ export default function MovementsPage() {
         .input {
           width: 100%;
           border-radius: 0.375rem;
-          border: 1px solid #28332d;
-          background-color: #1c2420;
+          border: 1px solid #E7E4DC;
+          background-color: #FFFFFF;
           padding: 0.55rem 0.7rem;
           font-size: 0.875rem;
-          color: #f4f1e8;
+          color: #211D17;
         }
         .input:focus {
           outline: none;
-          border-color: #c67c2e;
+          border-color: #E07B39;
         }
       `}</style>
 

@@ -68,7 +68,7 @@ export default function ClientsPage() {
             </div>
 
             {c.outstandingBalance > 0 && (
-              <p className="mt-2 text-xs text-clay-400">{fcfa(c.outstandingBalance)} en attente</p>
+              <p className="mt-2 text-xs text-clay-700">{fcfa(c.outstandingBalance)} en attente</p>
             )}
             {c.lastContactAt && (
               <p className="mt-1 text-[11px] text-paper/30">Dernier contact {relativeTime(c.lastContactAt)}</p>

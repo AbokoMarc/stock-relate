@@ -81,7 +81,7 @@ export default function ProductModal({ onClose, onSaved }: { onClose: () => void
       <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center">
         <div className="absolute inset-0 bg-black/60" onClick={onClose} />
         <div className="relative z-10 w-full sm:max-w-sm rounded-t-2xl sm:rounded-2xl border border-base-700 bg-base-900 p-6 text-center">
-          <UploadCloud className="mx-auto h-8 w-8 text-clay-400" />
+          <UploadCloud className="mx-auto h-8 w-8 text-clay-700" />
           <p className="mt-3 font-display text-sm text-paper">Mis en file d&apos;attente</p>
           <p className="mt-1.5 text-xs text-paper/50">
             Pas de réseau détecté. "{form.name}" sera créé automatiquement dès que la connexion
@@ -169,15 +169,15 @@ export default function ProductModal({ onClose, onSaved }: { onClose: () => void
         .input {
           width: 100%;
           border-radius: 0.375rem;
-          border: 1px solid #28332d;
-          background-color: #1c2420;
+          border: 1px solid #E7E4DC;
+          background-color: #FFFFFF;
           padding: 0.5rem 0.7rem;
           font-size: 0.875rem;
-          color: #f4f1e8;
+          color: #211D17;
         }
         .input:focus {
           outline: none;
-          border-color: #c67c2e;
+          border-color: #E07B39;
         }
       `}</style>
     </div>

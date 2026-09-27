@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html,
@@ -12,14 +12,14 @@ body {
 }
 
 body {
-  background-color: #0e1210;
-  color: #f4f1e8;
+  background-color: #ffffff;
+  color: #211d17;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: #c67c2e;
-  color: #0e1210;
+  background-color: #e07b39;
+  color: #ffffff;
 }
 
 /* Barre de scroll fine pour les tableaux qui débordent horizontalement */
@@ -28,7 +28,7 @@ body {
   width: 6px;
 }
 .thin-scroll::-webkit-scrollbar-thumb {
-  background-color: #3a483f;
+  background-color: #d8d3c7;
   border-radius: 999px;
 }
 

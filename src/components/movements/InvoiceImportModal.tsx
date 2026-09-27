@@ -151,7 +151,7 @@ export default function InvoiceImportModal({
               <option value="douala">Entrée à Douala</option>
             </select>
 
-            <p className="mb-3 flex gap-2 rounded-md bg-clay-500/10 border border-clay-500/30 px-2.5 py-2 text-xs text-clay-400">
+            <p className="mb-3 flex gap-2 rounded-md bg-clay-500/10 border border-clay-500/30 px-2.5 py-2 text-xs text-clay-700">
               <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
               Lecture automatique, pas garantie sur papier froissé/manuscrit — vérifiez chaque ligne avant de confirmer.
             </p>

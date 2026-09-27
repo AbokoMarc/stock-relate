@@ -37,7 +37,7 @@ export default function InventoryPage() {
       />
 
       {source === "cache" && warning && (
-        <div className="mb-4 flex gap-2.5 rounded-lg border border-clay-500/30 bg-clay-500/10 p-3 text-xs text-clay-400">
+        <div className="mb-4 flex gap-2.5 rounded-lg border border-clay-500/30 bg-clay-500/10 p-3 text-xs text-clay-700">
           <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
           <p>{warning}</p>
         </div>

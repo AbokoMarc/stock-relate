@@ -97,7 +97,7 @@ export default function OnboardingPage() {
             </p>
           )}
           {info && (
-            <p className="rounded-md bg-forest-600/10 border border-forest-600/30 px-3 py-2 text-xs text-forest-400">
+            <p className="rounded-md bg-forest-600/10 border border-forest-600/30 px-3 py-2 text-xs text-forest-600">
               {info}
             </p>
           )}

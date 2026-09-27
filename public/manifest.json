@@ -4,8 +4,8 @@
   "description": "Commerce OS local-first pour grossistes et commerçants d'Afrique Centrale",
   "start_url": "/dashboard",
   "display": "standalone",
-  "background_color": "#0E1210",
-  "theme_color": "#0E1210",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E07B39",
   "orientation": "portrait-primary",
   "icons": [
     { "src": "/icons/icon-192.svg", "sizes": "192x192", "type": "image/svg+xml", "purpose": "any" },
