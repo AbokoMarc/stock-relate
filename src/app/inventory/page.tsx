@@ -69,6 +69,11 @@ export default function InventoryPage() {
                 <th className="px-4 py-3 font-medium">Désignation</th>
                 <th className="px-4 py-3 font-medium text-right">Yaoundé</th>
                 <th className="px-4 py-3 font-medium text-right">Douala</th>
+                <th className="px-4 py-3 font-medium text-right">Réservé</th>
+                <th className="px-4 py-3 font-medium text-right">Disponible</th>
+                <th className="px-4 py-3 font-medium text-right">Seuil</th>
+                <th className="px-4 py-3 font-medium">Fournisseur</th>
+                <th className="px-4 py-3 font-medium text-right">Délai</th>
                 <th className="px-4 py-3 font-medium text-right">Coût détention/j</th>
                 <th className="px-4 py-3 font-medium">Statut</th>
               </tr>
@@ -76,7 +81,9 @@ export default function InventoryPage() {
             <tbody>
               {filtered.map((p) => {
                 const total = p.stock.yaounde + p.stock.douala;
-                const critical = total <= p.reorderPoint;
+                const reservedTotal = p.reserved.yaounde + p.reserved.douala;
+                const available = Math.max(0, total - reservedTotal);
+                const critical = available <= p.reorderPoint;
                 return (
                   <tr key={p.id} className="border-b border-base-800 last:border-0 hover:bg-base-800/60">
                     <td className="px-4 py-3 font-mono text-xs text-paper/60">{p.sku}</td>
@@ -86,6 +93,13 @@ export default function InventoryPage() {
                     </td>
                     <td className="px-4 py-3 text-right tabular-nums">{p.stock.yaounde}</td>
                     <td className="px-4 py-3 text-right tabular-nums">{p.stock.douala}</td>
+                    <td className="px-4 py-3 text-right tabular-nums text-paper/60">{reservedTotal}</td>
+                    <td className="px-4 py-3 text-right tabular-nums font-medium">{available}</td>
+                    <td className="px-4 py-3 text-right tabular-nums text-paper/60">{p.reorderPoint}</td>
+                    <td className="px-4 py-3 text-paper/70">{p.supplierName ?? "—"}</td>
+                    <td className="px-4 py-3 text-right tabular-nums text-paper/60">
+                      {p.supplierLeadTimeDays != null ? `${p.supplierLeadTimeDays} j` : "—"}
+                    </td>
                     <td className="px-4 py-3 text-right tabular-nums text-paper/60">
                       {fcfa(p.dailyHoldingCost)}
                     </td>
@@ -97,14 +111,14 @@ export default function InventoryPage() {
               })}
               {products !== null && filtered.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-4 py-10 text-center text-sm text-paper/40">
+                  <td colSpan={11} className="px-4 py-10 text-center text-sm text-paper/40">
                     Aucun produit ne correspond à cette recherche.
                   </td>
                 </tr>
               )}
               {products === null && (
                 <tr>
-                  <td colSpan={6} className="px-4 py-10 text-center text-sm text-paper/40">
+                  <td colSpan={11} className="px-4 py-10 text-center text-sm text-paper/40">
                     Chargement…
                   </td>
                 </tr>

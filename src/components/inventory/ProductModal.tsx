@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { enqueueProductCreate } from "@/lib/outbox";
+import { useSuppliers } from "@/hooks/useSuppliers";
 import { X, UploadCloud } from "lucide-react";
 
 export default function ProductModal({ onClose, onSaved }: { onClose: () => void; onSaved: () => void }) {
@@ -15,8 +16,12 @@ export default function ProductModal({ onClose, onSaved }: { onClose: () => void
     dailyHoldingCost: "",
     stockYaounde: "",
     stockDouala: "",
+    reservedYaounde: "",
+    reservedDouala: "",
     reorderPoint: "",
+    supplierId: "",
   });
+  const { suppliers } = useSuppliers();
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [queued, setQueued] = useState(false);
@@ -35,7 +40,10 @@ export default function ProductModal({ onClose, onSaved }: { onClose: () => void
       daily_holding_cost: Number(form.dailyHoldingCost) || 0,
       stock_yaounde: Number(form.stockYaounde) || 0,
       stock_douala: Number(form.stockDouala) || 0,
+      reserved_yaounde: Number(form.reservedYaounde) || 0,
+      reserved_douala: Number(form.reservedDouala) || 0,
       reorder_point: Number(form.reorderPoint) || 0,
+      supplier_id: form.supplierId || null,
     };
   }
 
@@ -143,6 +151,22 @@ export default function ProductModal({ onClose, onSaved }: { onClose: () => void
               <input type="number" className="input" value={form.reorderPoint} onChange={(e) => update("reorderPoint", e.target.value)} />
             </Field>
           </div>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Réservé Yaoundé">
+              <input type="number" className="input" value={form.reservedYaounde} onChange={(e) => update("reservedYaounde", e.target.value)} />
+            </Field>
+            <Field label="Réservé Douala">
+              <input type="number" className="input" value={form.reservedDouala} onChange={(e) => update("reservedDouala", e.target.value)} />
+            </Field>
+          </div>
+          <Field label="Fournisseur">
+            <select className="input" value={form.supplierId} onChange={(e) => update("supplierId", e.target.value)}>
+              <option value="">— aucun —</option>
+              {suppliers?.map((sup) => (
+                <option key={sup.id} value={sup.id}>{sup.name}</option>
+              ))}
+            </select>
+          </Field>
         </div>
 
         {error && (

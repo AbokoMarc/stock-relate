@@ -9,7 +9,11 @@ export interface Product {
   sellPrice: number; // FCFA, prix de vente
   dailyHoldingCost: number; // FCFA/jour — coût d'immobilisation (Dynamic P&L)
   stock: Record<Warehouse, number>;
+  reserved: Record<Warehouse, number>; // unités réservées (commande en cours), saisie manuelle
   reorderPoint: number;
+  supplierId?: string;
+  supplierName?: string; // jointure, pour affichage direct dans le tableau
+  supplierLeadTimeDays?: number;
   updatedAt: string; // ISO
 }
 

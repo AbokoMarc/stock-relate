@@ -20,7 +20,7 @@ export function useProducts() {
   const refresh = useCallback(async () => {
     const { data, error } = await supabase
       .from("products")
-      .select("*")
+      .select("*, suppliers(name, avg_lead_time_days)")
       .order("name") as { data: SupabaseProductRow[] | null; error: { message: string } | null };
 
     if (error || !data) {
